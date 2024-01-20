@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Douying Downloader",
+  "version": "1.0",
+  "description": "A Simple Douying Downloader",
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.douyin.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "permissions": ["activeTab", "scripting", "tabs"],
+  "web_accessible_resources": [
+    {
+      "resources": ["script.js"],
+      "matches": ["https://douyin.com/*", "https://www.douyin.com/*"]
+    }
+  ]
+}
