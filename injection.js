@@ -1,9 +1,6 @@
 const linkList = [];
-const loadingdIconLink =
-  "https://imagedelivery.net/5MYSbk45M80qAwecrlKzdQ/d3a4e948-8c81-4c46-01ac-1330dffe8b00/preview";
-const downloadIconLink = "https://cdn-icons-png.flaticon.com/512/0/532.png";
-// const loadingdIconLink = chrome.runtime.getURL("assets/images/loading.png");
-// const downloadIconLink = chrome.runtime.getURL("assets/images/download.png");
+const loadingdIconLink = localStorage.getItem("loadingdIconLink");
+const downloadIconLink = localStorage.getItem("downloadIconLink");
 
 const downloadVideo = () => {
   const targetDiv = document.querySelector('[data-e2e="feed-active-video"]');
@@ -84,7 +81,7 @@ const init = () => {
   window.fetch = function () {
     const link = arguments[0];
     if (link.includes("zjcdn") && linkList.at(-1) !== link) {
-      console.log("Fetch request made:", link);
+      //performance issue, fix it later
       linkList.push(link);
     }
     return originalFetch.apply(this, arguments);

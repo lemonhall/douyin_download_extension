@@ -15,7 +15,7 @@
   "permissions": ["activeTab", "scripting", "tabs"],
   "web_accessible_resources": [
     {
-      "resources": ["script.js"],
+      "resources": ["injection.js", "assets/*"],
       "matches": ["https://douyin.com/*", "https://www.douyin.com/*"]
     }
   ]
