@@ -60,7 +60,9 @@ const sendDownloadMesssage = (targetDivDom, targetImageDom) => {
 };
 
 const addDownloadDiv = () => {
-  const targetDiv = document.querySelector('[data-e2e="feed-active-video"]');
+  const targetDiv = Array.from(
+    document.querySelectorAll('[data-e2e="feed-active-video"]')
+  ).at(-1);
 
   if (!targetDiv) {
     return;
@@ -91,7 +93,9 @@ const addDownloadDiv = () => {
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   if (request.action === "delegate_download") {
-    const targetDiv = document.querySelector('[data-e2e="feed-active-video"]');
+    const targetDiv = Array.from(
+      document.querySelectorAll('[data-e2e="feed-active-video"]')
+    ).at(-1);
     sendDownloadMesssage(targetDiv);
   }
 });
