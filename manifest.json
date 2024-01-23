@@ -9,7 +9,7 @@
       "js": ["content.js"]
     }
   ],
-  "permissions": ["activeTab", "tabs", "webRequest", "downloads"],
+  "permissions": ["activeTab", "webRequest", "downloads"],
   "host_permissions": ["https://*.douyin.com/*", "https://*.zjcdn.com/*"],
   "web_accessible_resources": [
     {
