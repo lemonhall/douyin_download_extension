@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Simple Douyin Downloader",
-  "version": "1.1",
+  "version": "1.2",
   "description": "A Simple Douyin Downloader",
   "content_scripts": [
     {

@@ -86,9 +86,11 @@ const addDownloadDiv = () => {
     sendDownloadMesssage(targetDiv, image);
   };
 
-  targetDiv
-    ?.querySelector(".immersive-player-switch-on-hide-interaction-area")
-    ?.prepend(div);
+  const sideElement =
+    targetDiv?.querySelector(
+      ".immersive-player-switch-on-hide-interaction-area"
+    ) || targetDiv.querySelector("xg-controls")?.nextSibling?.firstChild;
+  sideElement?.prepend(div);
 };
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
